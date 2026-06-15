@@ -40,3 +40,27 @@
     const nome = tabela.rows[i].cells[0].children[0].value);
     selecoes.push({nome, prob});
   }
+    let     let fase = selecoes;;
+fase = selecoes;
+    let texto = "";
+    
+    while (fase.length > 1) {
+      texto += "<h3>Fase com" + fase.length + "seleções </h3>";
+      let novaFase = [];
+      for (let i = 0; i < fase.length; i += 2) {
+        if (i+1 < fase.length) {
+         const vencedor = escolherVencedor(fase[i].nome, fase[i].prob, fase[i+1].nome, fase[i+1].prob);
+         texto+= fase[i].nome + " vs " + fase[i+1].nome + "-><b>" + vencedor + "</b><b>";
+        novaFase.push({nome: vencedor, prob: 50}); // probabilidade ajustada
+      } else {
+        novaFase.push(fase[i]; // caso de número ímpar
+      }
+    }
+  fase = novaFase;
+ }
+ texto += "<h2>Campeão: " + fase[0].nome + " ?</h2>";
+ document.getElementById("resresultado").innerHinnerHTML = texto;
+}
+ </script>
+</body>
+</html>>
